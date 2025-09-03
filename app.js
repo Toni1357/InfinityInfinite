@@ -53,9 +53,14 @@ function checkCombination() {
     SoundManager.playSound("fail.mp3");
   }
 
+  // Supprimer les éléments sélectionnés après chaque tentative
+  selected = [];
+
   setTimeout(() => {
-    clearSelection();
     showResult("");
+    renderBaseElements();
+    renderCombination();
+    renderDiscoveryMenu();
   }, 1500);
 }
 
@@ -124,11 +129,13 @@ function renderBaseElements() {
   const container = document.getElementById("base-elements");
   container.innerHTML = "";
   baseElements.forEach(el => {
-    const btn = document.createElement("button");
-    btn.textContent = el;
-    btn.className = selected.includes(el) ? "selected" : "";
-    btn.onclick = () => selectElement(el);
-    container.appendChild(btn);
+    if (!selected.includes(el)) {
+      const btn = document.createElement("button");
+      btn.textContent = el;
+      btn.className = selected.includes(el) ? "selected" : "";
+      btn.onclick = () => selectElement(el);
+      container.appendChild(btn);
+    }
   });
 }
 
