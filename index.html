@@ -1,1 +1,42 @@
-salut
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infinity Infinite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>🌟 Infinity Infinite</h1>
+
+    <section id="base-elements" class="button-group"></section>
+
+    <section id="combination-view">
+      <h2>🧪 Combinaison actuelle :</h2>
+      <div id="selected-elements" class="selected-group"></div>
+      <div id="result" class="result-text"></div>
+      <button id="clear-selection">🧹 Vider la sélection</button>
+    </section>
+
+    <section id="discovery-menu">
+      <div class="menu-header">
+        <h2>📖 Découvertes</h2>
+        <button id="reset-discoveries">Réinitialiser</button>
+      </div>
+      <input type="text" id="search" placeholder="Rechercher..." />
+      <div id="discovery-grid" class="grid"></div>
+    </section>
+
+    <footer>
+      <span>Toni's Studios • v1.5</span>
+      <button id="dev-button">⚒️</button>
+    </footer>
+  </main>
+
+  <div id="particles-left" class="particles"></div>
+  <div id="particles-right" class="particles"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
